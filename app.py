@@ -219,7 +219,7 @@ def main() -> None:
     if not check_password():
         st.stop()
 
-    st.title("🤖 Personal Assistant")
+    st.title("Hesham Emara Personal Assistant")
 
     if "messages" not in st.session_state:
         st.session_state.messages = []

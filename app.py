@@ -78,8 +78,11 @@ def get_search_client() -> TavilyClient:
 def build_system_prompt() -> str:
     now = datetime.now(TIMEZONE).strftime("%A, %d %B %Y, %H:%M")
     return (
-        "You are a warm, capable personal assistant for a busy person in Egypt. "
-        "Reply in the same language the user writes in (Arabic or English). "
+        "You are a warm, capable personal assistant. "
+        "LANGUAGE RULE: always reply in the language of the user's LATEST "
+        "message. If the latest message is in English, reply in English. "
+        "If it is in Arabic, reply in Arabic. Ignore the language of earlier "
+        "messages and of search results. "
         "Be concise and practical. Ask a clarifying question only when the "
         "answer would change materially. "
         "If you are not sure about a fact, number, law or price, say so instead "
